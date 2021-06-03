@@ -10,13 +10,14 @@ public class GUI
     /**
      * Constructor for objects of class GUI
      */
-    public GUI()
+    public static void main(String[] args)
     {
          // initialise instance variables
          Contacts ct = new Contacts();
          UI.initialise();
+         
          UI.addButton("Print All", ct::printAll);
-         //UI.addButton("Clear", ct::clear);
+         UI.addButton("Clear", UI::clearGraphics);
          UI.addButton("Quit", UI::quit);
          
     }

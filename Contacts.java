@@ -24,9 +24,9 @@ public class Contacts
         
         //Create contacts
         
-        Contact person1 = new Contact(1, "Astrid Nixon", 0273555325);
-        Contact person2 = new Contact(2, "Lyle Cornish", 0273555325);
-        Contact person3 = new Contact(3, "Rachel Correa", 0273555325);
+        Contact person1 = new Contact(1, "Astrid Nixon", 3555325);
+        Contact person2 = new Contact(2, "Lyle Cornish", 0273555);
+        Contact person3 = new Contact(3, "Rachel Correa", 0275325);
         
         //Add books to hashmap
         contactsMap.put(1,person1);
@@ -43,7 +43,7 @@ public class Contacts
      */
     public void addContact()
     {
-        final int MAX_NUMBER = 12;
+        final int MAX_NUMBER = 999999999;
         int number = 0;
         
         // Ask the user for details
@@ -54,7 +54,7 @@ public class Contacts
         do
         {
             number = UI.askInt("Phone Number: ");
-        }while (0 > number || number > MAX_NUMBER);
+        }while (number < MAX_NUMBER);
         
         //add a profile picture for display in the GUI
         String imgFileName = UIFileChooser.open("Choose Image FIle: ");
@@ -85,16 +85,8 @@ public class Contacts
             UI.println(contactId + "Details: ");
             UI.println(contactsMap.get(contactId).getName() + " "
                         + contactsMap.get(contactId).getNumber() + " ");
+            contactsMap.get(contactId).displayBook();
         }
-    }
-    
-    /**
-     * Clear the graphics pane
-     */
-    private void clear()
-    {
-        UI.clearPanes();    //clear the graphics pane
-        
     }
     
     /**
@@ -137,4 +129,5 @@ public class Contacts
         
         }while(!choice.equalsIgnoreCase("Q"));
     }
+   
 }

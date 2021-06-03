@@ -13,7 +13,7 @@ public class Contact
     private String name;
     private int number;
     private String image;
-    private static final String DEFAULT_IMAGE = "contactimg.jpg";
+    private static final String DEFAULT_IMAGE = "profilePicture.jpg";
 
     private double locX, locY;
     
